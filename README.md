@@ -6,6 +6,7 @@
 **Required:**
 - Python3
 - pip3
+- A NASA API Key which can be obtained here [NASA API Website](https://api.nasa.gov)
 
 **Modules:**
 - requests
