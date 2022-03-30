@@ -16,9 +16,9 @@ current_date = str(current_date)[:10]
 # Prepare the requests
 # -------------------------------
 # Another option is below
-# api_string = NASA_API + "?start_date=" + current_date + "&end_date=" + current_date+ "&api_key=UTGdiWTBnodR6ouJ4yEHqe7BQvMqCgLDNpFYLDpA"
+# api_string = NASA_API + "?start_date=" + current_date + "&end_date=" + current_date+ "&api_key=your API key"
 # response = requests.get(api_string)
-arguments = {'start_date':current_date,'end_date':current_date, 'api_key': "UTGdiWTBnodR6ouJ4yEHqe7BQvMqCgLDNpFYLDpA"}
+arguments = {'start_date':current_date,'end_date':current_date, 'api_key': "your API key"}
 response = requests.get(NASA_API,params=arguments)
 
 # Print json
