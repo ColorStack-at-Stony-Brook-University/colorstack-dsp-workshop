@@ -2,6 +2,8 @@ import requests
 import datetime
 import json
 import random
+# Extra
+from colorama import Fore
 
 NASA_API = "https://api.nasa.gov/neo/rest/v1/feed"
 
@@ -21,9 +23,8 @@ response = requests.get(NASA_API,params=arguments)
 
 # Print json
 # -------------------------------
-neo_data = response.json()
-# parsed = json.loads(response.text)
-# print(json.dumps(neo_data, indent=4, sort_keys=True))
+neo_data = response.json() # returns a dict version of JSON
+# print(json.dumps(neo_data, indent=4, sort_keys=True)) # json.dumps takes in an object and turns it into a JSON formatted string
 
 number_of_neos = neo_data["element_count"]
 neo_data = neo_data["near_earth_objects"]
@@ -40,7 +41,7 @@ neo_miss_distance = neo["close_approach_data"][0]["miss_distance"]["miles"]
 neo_potentially_hazardous = neo["is_potentially_hazardous_asteroid"]
 neo_link = neo["nasa_jpl_url"]
 
-print("Asteroid Name: " + neo_name)
+print(Fore.GREEN + "Asteroid Name: " + neo_name)
 print("Asteroid Velocity: " + neo_velocity + " miles per hour")
 print("Asteroid Min Diameter: " + str(neo_min_diameter) + " miles")
 print("Asteroid Max Diameter: " + str(neo_max_diameter) + " miles")
